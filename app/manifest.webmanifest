@@ -1,0 +1,45 @@
+{
+  "name": "考研管家 · 全周期备考",
+  "short_name": "考研管家",
+  "description": "纯本地、离线可用的考研备考管理 App：择校规划、日常任务、刷题模考、知识笔记、时间精力、复盘报考，共 6 大模块 49 项功能。",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff8e0",
+  "theme_color": "#5fb878",
+  "categories": ["education", "productivity", "books"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    { "name": "备考总览", "url": "./index.html#dashboard" },
+    { "name": "今日任务", "url": "./index.html#tasks" },
+    { "name": "刷题模考", "url": "./index.html#practice" },
+    { "name": "知识笔记", "url": "./index.html#knowledge" }
+  ]
+}

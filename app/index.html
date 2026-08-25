@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>考研管家 · 全周期备考</title>
+  <!-- PWA：可"安装"到主屏幕（iOS/鸿蒙/安卓三端均识别） -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#5fb878">
+  <meta name="background-color" content="#fff8e0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- iOS / 鸿蒙 添加到主屏幕 -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="考研管家">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <!-- 手写体字体：ZCOOL KuaiLe 圆胖手写 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <!-- 侧边栏由 app.js 渲染 -->
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <!-- 顶栏由 app.js 渲染 -->
+      </header>
+      <section class="content">
+        <!-- 内容由对应模块渲染 -->
+      </section>
+    </main>
+  </div>
+
+  <!-- 加载顺序：配置 → 数据层 → 主应用(定义App路由表) → 同步层 → 各模块注册路由 -->
+  <!-- 注意：app.js 必须在各模块之前加载，使 w.App.route 在模块注册时已存在；
+       app.js 的 DOMContentLoaded 初始化在所有脚本加载完后才触发。 -->
+  <script src="js/config.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/m1_dashboard.js"></script>
+  <script src="js/m2_tasks.js"></script>
+  <script src="js/m3_practice.js"></script>
+  <script src="js/m4_knowledge.js"></script>
+  <script src="js/feed.js"></script>
+  <script src="js/m5_time.js"></script>
+  <script src="js/m6_review.js"></script>
+  <script>
+    // 注册 Service Worker（提供离线打开能力）
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function (e) { console.log('SW 注册失败', e); });
+      });
+    }
+  </script>
+</body>
+</html>

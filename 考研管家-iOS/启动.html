@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>考研管家 · iOS 安装指南</title>
+<style>
+:root{--bg:#fff8e0;--panel:#fffdf3;--border:#3d3929;--accent:#5fb878;--accent-d:#4a9c5f;--text:#4a4036;--muted:#9c8e6a;--pink:#ff8aa6;--shadow:0 3px 0 0 var(--border);--font-zh:'PingFang SC','Microsoft YaHei',-apple-system,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-zh);background:var(--bg);color:var(--text);min-height:100vh;padding:24px 20px 60px;line-height:1.7}
+.wrap{max-width:680px;margin:0 auto}
+.hero{text-align:center;padding:28px 16px;background:var(--panel);border:2.5px solid var(--border);border-radius:18px;box-shadow:var(--shadow);margin-bottom:20px}
+.hero img{width:96px;height:96px;display:block;margin:0 auto 10px;border-radius:18px;border:2px solid var(--border);box-shadow:0 3px 0 var(--border)}
+.hero h1{font-size:24px;margin-bottom:6px;color:var(--accent-d)}
+.hero p{color:var(--muted);font-size:13px}
+.card{background:var(--panel);border:2.5px solid var(--border);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:16px}
+.card h2{font-size:17px;margin-bottom:12px;color:var(--accent-d);display:flex;align-items:center;gap:8px}
+.card h2::before{content:'';width:8px;height:18px;background:var(--accent);border-radius:3px;border:1.5px solid var(--border)}
+.step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.step .num{flex:0 0 32px;height:32px;background:var(--accent);color:#fff;border:2px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 2px 0 var(--accent-d);font-size:14px}
+.step .body{flex:1;padding-top:3px}
+.step b{color:var(--accent-d)}
+.kbd{display:inline-block;padding:2px 8px;background:#fff;border:1.5px solid var(--border);border-radius:6px;font-size:12px;font-weight:600;box-shadow:0 1px 0 var(--border);margin:0 2px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--accent);color:#fff;border:2.5px solid var(--border);border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 3px 0 var(--accent-d);transition:transform .12s;font-size:14px;cursor:pointer}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 var(--accent-d)}
+.btn:active{transform:translate(1px,1px);box-shadow:0 1px 0 var(--accent-d)}
+.center{text-align:center;margin-top:24px}
+.note{background:#fffbe6;border:2px dashed var(--border-soft);border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--muted);margin-top:12px}
+.warn{background:#ffe6e6;border:2px solid #ff7676;border-radius:12px;padding:10px 14px;font-size:13px;color:#c33;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img src="../app/icons/icon-192.png" alt="考研管家">
+    <h1>📚 考研管家 · iOS 安装</h1>
+    <p>iPhone / iPad · Safari 浏览器添加到主屏幕</p>
+  </div>
+
+  <div class="card">
+    <h2>安装步骤（约 30 秒）</h2>
+    <div class="step"><div class="num">1</div><div class="body">用 <b>Safari</b> 浏览器打开下方 <b>立即打开</b> 按钮，进入 App 页面。</div></div>
+    <div class="step"><div class="num">2</div><div class="body">点击底部分享按钮 <span class="kbd">⬆</span>（方形带向上箭头的图标）。</div></div>
+    <div class="step"><div class="num">3</div><div class="body">在弹出菜单中选择 <b>「添加到主屏幕」</b>。</div></div>
+    <div class="step"><div class="num">4</div><div class="body">名称保持「考研管家」不变，点右上角 <b>「添加」</b>。</div></div>
+    <div class="step"><div class="num">5</div><div class="body">回到主屏幕，即可看到 <b>📚 考研管家</b> 图标，点击即可全屏打开、离线使用。</div></div>
+  </div>
+
+  <div class="card">
+    <h2>使用说明</h2>
+    <p style="font-size:14px;margin-bottom:10px">首次打开需联网一次（加载字体 + 注册离线缓存），之后<strong>完全离线可用</strong>。</p>
+    <p style="font-size:14px;margin-bottom:10px">所有数据存储在本机 <code>localStorage</code> 与 <code>IndexedDB</code>，关闭重启数据不丢；开启 iCloud 同步可多端同步（详见 App 内设置）。</p>
+    <div class="note">提示：iOS 上 PWA 必须用 Safari 添加；Chrome/Edge 添加会回退为普通书签。</div>
+  </div>
+
+  <div class="center">
+    <a class="btn" href="../app/index.html" target="_blank">🚀 立即打开考研管家</a>
+    <div class="note">首次打开后请回到本页面，按上面步骤完成"添加到主屏幕"。</div>
+  </div>
+</div>
+</body>
+</html>

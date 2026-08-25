@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>考研管家 · 安卓安装指南</title>
+<style>
+:root{--bg:#fff8e0;--panel:#fffdf3;--border:#3d3929;--accent:#5fb878;--accent-d:#4a9c5f;--text:#4a4036;--muted:#9c8e6a;--pink:#ff8aa6;--shadow:0 3px 0 0 var(--border);--font-zh:'PingFang SC','Microsoft YaHei',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-zh);background:var(--bg);color:var(--text);min-height:100vh;padding:24px 20px 60px;line-height:1.7}
+.wrap{max-width:680px;margin:0 auto}
+.hero{text-align:center;padding:28px 16px;background:var(--panel);border:2.5px solid var(--border);border-radius:18px;box-shadow:var(--shadow);margin-bottom:20px}
+.hero img{width:96px;height:96px;display:block;margin:0 auto 10px;border-radius:18px;border:2px solid var(--border);box-shadow:0 3px 0 var(--border)}
+.hero h1{font-size:24px;margin-bottom:6px;color:var(--accent-d)}
+.hero p{color:var(--muted);font-size:13px}
+.card{background:var(--panel);border:2.5px solid var(--border);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:16px}
+.card h2{font-size:17px;margin-bottom:12px;color:var(--accent-d);display:flex;align-items:center;gap:8px}
+.card h2::before{content:'';width:8px;height:18px;background:var(--accent);border-radius:3px;border:1.5px solid var(--border)}
+.step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.step .num{flex:0 0 32px;height:32px;background:var(--accent);color:#fff;border:2px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 2px 0 var(--accent-d);font-size:14px}
+.step .body{flex:1;padding-top:3px}
+.step b{color:var(--accent-d)}
+.kbd{display:inline-block;padding:2px 8px;background:#fff;border:1.5px solid var(--border);border-radius:6px;font-size:12px;font-weight:600;box-shadow:0 1px 0 var(--border);margin:0 2px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--accent);color:#fff;border:2.5px solid var(--border);border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 3px 0 var(--accent-d);transition:transform .12s;font-size:14px;cursor:pointer}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 var(--accent-d)}
+.btn:active{transform:translate(1px,1px);box-shadow:0 1px 0 var(--accent-d)}
+.btn-ghost{background:#fff;color:var(--accent-d)}
+.center{text-align:center;margin-top:24px}
+.note{background:#fffbe6;border:2px dashed var(--border-soft);border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--muted);margin-top:12px}
+.warn{background:#ffe6e6;border:2px solid #ff7676;border-radius:12px;padding:10px 14px;font-size:13px;color:#c33;margin-top:12px}
+code{background:#fff8e0;padding:1px 6px;border-radius:4px;border:1px solid #d4c88f;font-size:12.5px}
+pre{background:#1a1a1a;color:#e0e0e0;padding:12px 14px;border-radius:10px;overflow-x:auto;font-size:12.5px;margin:8px 0;border:2px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img src="../app/icons/icon-192.png" alt="考研管家">
+    <h1>📚 考研管家 · 安卓安装</h1>
+    <p>Android · 华为/小米/OPPO/vivo/三星等</p>
+  </div>
+
+  <div class="card">
+    <h2>方式一：浏览器一键安装（推荐，30 秒）</h2>
+    <div class="step"><div class="num">1</div><div class="body">用 <b>Chrome</b> / <b>Edge</b> / <b>华为浏览器</b> 打开下方 <b>立即打开</b> 按钮。</div></div>
+    <div class="step"><div class="num">2</div><div class="body">浏览器地址栏右侧会自动弹出 <b>「安装应用」</b> 按钮（或菜单 → <b>添加到主屏幕</b> / <b>安装应用</b>）。</div></div>
+    <div class="step"><div class="num">3</div><div class="body">点 <b>「安装」</b>，系统会自动下载并安装到桌面，几秒完成。</div></div>
+    <div class="step"><div class="num">4</div><div class="body">桌面出现 <b>📚 考研管家</b> 图标，点击全屏打开，<strong>完全离线可用</strong>。</div></div>
+    <div class="note">提示：Android 5.0+、Chrome 76+ 均支持 PWA 安装。如未出现安装提示，可改用方式二打包成 APK。</div>
+  </div>
+
+  <div class="card">
+    <h2>方式二：Bubblewrap 一键打包 APK（进阶）</h2>
+    <p style="font-size:13.5px;margin-bottom:8px">如需独立的 <code>.apk</code> 安装包分发，使用 Google 官方 <b>Bubblewrap</b> 工具，把 PWA 包装成 APK。</p>
+    <p style="font-size:13.5px;margin-bottom:4px"><b>环境要求：</b>Node.js 18+、JDK 17、Android SDK（命令行工具即可）</p>
+    <p style="font-size:13.5px;margin:8px 0 4px"><b>步骤：</b></p>
+    <pre>npx @bubblewrap/cli init --manifest https://你的域名/考研管家-安卓/启动.html\nnpx @bubblewrap-cli build</pre>
+    <p style="font-size:13.5px;margin:8px 0 4px">生成的 <code>app-release-bundle.apk</code> 即可分发到任何 Android 设备。</p>
+    <div class="warn">注意：Bubblewrap 生成的 APK 体积约 1-2 MB，运行时仍会拉取线上 PWA。如需完全离线 APK，请用 Android Studio 的 WebView 工程或 Cordova / Capacitor 打包（详见 README.md）。</div>
+  </div>
+
+  <div class="card">
+    <h2>方式三：Android Studio WebView 工程（完全离线 APK）</h2>
+    <p style="font-size:13.5px">用 Android Studio 新建项目，把 <code>../app/</code> 全部文件复制到 <code>app/src/main/assets/</code>，MainActivity 加载 <code>file:///android_asset/index.html</code> 即可生成 5 MB 左右的独立 APK。本项目所有依赖已本地化（pdf.js 也在 <code>vendor/</code>），无需联网。</p>
+  </div>
+
+  <div class="center">
+    <a class="btn" href="../app/index.html" target="_blank">🚀 立即打开考研管家</a>
+    <div class="note">首次打开后请回到本页面，按上面步骤完成安装。</div>
+  </div>
+</div>
+</body>
+</html>

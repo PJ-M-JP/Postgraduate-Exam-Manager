@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>考研管家 · 下载安装</title>
+<style>
+:root{--bg:#fff8e0;--panel:#fffdf3;--border:#3d3929;--accent:#5fb878;--accent-d:#4a9c5f;--text:#4a4036;--muted:#9c8e6a;--shadow:0 3px 0 0 var(--border);--font-zh:'PingFang SC','Microsoft YaHei',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-zh);background:var(--bg);color:var(--text);min-height:100vh;padding:40px 20px 60px;line-height:1.7;display:flex;align-items:center;justify-content:center}
+.wrap{max-width:680px;width:100%}
+.hero{text-align:center;padding:28px 16px 24px;background:var(--panel);border:2.5px solid var(--border);border-radius:18px;box-shadow:var(--shadow);margin-bottom:20px}
+.hero img{width:96px;height:96px;display:block;margin:0 auto 10px;border-radius:18px;border:2px solid var(--border);box-shadow:0 3px 0 var(--border)}
+.hero h1{font-size:24px;margin-bottom:6px;color:var(--accent-d)}
+.hero p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--panel);border:2.5px solid var(--border);border-radius:16px;padding:22px 20px;box-shadow:var(--shadow);text-align:center;text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s;display:block}
+.card:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--border)}
+.card:active{transform:translate(1px,1px);box-shadow:0 1px 0 var(--border)}
+.card .ico{font-size:36px;margin-bottom:8px}
+.card .name{font-size:16px;font-weight:700;margin-bottom:4px;color:var(--accent-d)}
+.card .sub{font-size:12px;color:var(--muted)}
+.detected{text-align:center;font-size:12px;color:var(--muted);margin-top:14px}
+.foot{text-align:center;margin-top:22px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img src="app/icons/icon-192.png" alt="考研管家">
+    <h1>📚 考研管家 · 下载安装</h1>
+    <p>选你的设备，按引导添加到主屏幕</p>
+  </div>
+  <div class="grid">
+    <a class="card" id="card-ios" href="考研管家-iOS/启动.html">
+      <div class="ico">🍎</div>
+      <div class="name">iOS</div>
+      <div class="sub">iPhone / iPad · Safari 添加到主屏幕</div>
+    </a>
+    <a class="card" id="card-hmos" href="考研管家-鸿蒙/启动.html">
+      <div class="ico">📱</div>
+      <div class="name">鸿蒙</div>
+      <div class="sub">华为 / 荣耀 · 鸿蒙 HarmonyOS</div>
+    </a>
+    <a class="card" id="card-android" href="考研管家-安卓/启动.html">
+      <div class="ico">🤖</div>
+      <div class="name">安卓</div>
+      <div class="sub">华为/小米/OPPO/vivo · Chrome 一键安装</div>
+    </a>
+  </div>
+  <div class="detected" id="detected"></div>
+  <div class="foot">数据本地存储 · 离线可用 · 可选云同步</div>
+</div>
+<script>
+(function(){
+  var ua = navigator.userAgent;
+  var card;
+  if (/iPhone|iPad|iPod/.test(ua)) card = 'ios';
+  else if (/HarmonyOS|HUAWEI|Honor/.test(ua) || /Android/.test(ua) === false && /Mobile/.test(ua) === false && navigator.platform === 'Linux armv81') card = 'hmos';
+  else if (/Android/.test(ua)) card = 'android';
+  var labels = {ios:'检测到 iOS，已为你高亮 🍎', hmos:'检测到 HarmonyOS，已为你高亮 📱', android:'检测到 Android，已为你高亮 🤖'};
+  if (card) {
+    var el = document.getElementById('card-' + card);
+    if (el) el.style.boxShadow = '0 5px 0 var(--accent-d)';
+    document.getElementById('detected').textContent = labels[card] || '';
+  }
+})();
+</script>
+</body>
+</html>

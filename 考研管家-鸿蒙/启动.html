@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>考研管家 · 鸿蒙安装指南</title>
+<style>
+:root{--bg:#fff8e0;--panel:#fffdf3;--border:#3d3929;--accent:#5fb878;--accent-d:#4a9c5f;--text:#4a4036;--muted:#9c8e6a;--pink:#ff8aa6;--shadow:0 3px 0 0 var(--border);--font-zh:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-zh);background:var(--bg);color:var(--text);min-height:100vh;padding:24px 20px 60px;line-height:1.7}
+.wrap{max-width:680px;margin:0 auto}
+.hero{text-align:center;padding:28px 16px;background:var(--panel);border:2.5px solid var(--border);border-radius:18px;box-shadow:var(--shadow);margin-bottom:20px}
+.hero img{width:96px;height:96px;display:block;margin:0 auto 10px;border-radius:18px;border:2px solid var(--border);box-shadow:0 3px 0 var(--border)}
+.hero h1{font-size:24px;margin-bottom:6px;color:var(--accent-d)}
+.hero p{color:var(--muted);font-size:13px}
+.card{background:var(--panel);border:2.5px solid var(--border);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:16px}
+.card h2{font-size:17px;margin-bottom:12px;color:var(--accent-d);display:flex;align-items:center;gap:8px}
+.card h2::before{content:'';width:8px;height:18px;background:var(--accent);border-radius:3px;border:1.5px solid var(--border)}
+.step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.step .num{flex:0 0 32px;height:32px;background:var(--accent);color:#fff;border:2px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 2px 0 var(--accent-d);font-size:14px}
+.step .body{flex:1;padding-top:3px}
+.step b{color:var(--accent-d)}
+.kbd{display:inline-block;padding:2px 8px;background:#fff;border:1.5px solid var(--border);border-radius:6px;font-size:12px;font-weight:600;box-shadow:0 1px 0 var(--border);margin:0 2px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--accent);color:#fff;border:2.5px solid var(--border);border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 3px 0 var(--accent-d);transition:transform .12s;font-size:14px;cursor:pointer}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 var(--accent-d)}
+.btn:active{transform:translate(1px,1px);box-shadow:0 1px 0 var(--accent-d)}
+.center{text-align:center;margin-top:24px}
+.note{background:#fffbe6;border:2px dashed var(--border-soft);border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--muted);margin-top:12px}
+.warn{background:#ffe6e6;border:2px solid #ff7676;border-radius:12px;padding:10px 14px;font-size:13px;color:#c33;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img src="../app/icons/icon-192.png" alt="考研管家">
+    <h1>📚 考研管家 · 鸿蒙安装</h1>
+    <p>HarmonyOS · 华为/荣耀手机与平板</p>
+  </div>
+
+  <div class="card">
+    <h2>方式一：浏览器添加到桌面（推荐，最简单）</h2>
+    <div class="step"><div class="num">1</div><div class="body">用 <b>华为浏览器</b>（或鸿蒙自带浏览器）打开下方 <b>立即打开</b> 按钮。</div></div>
+    <div class="step"><div class="num">2</div><div class="body">点击浏览器菜单（右上角 <span class="kbd">⋮</span> 或底部分享）。</div></div>
+    <div class="step"><div class="num">3</div><div class="body">选择 <b>「添加到桌面」</b> 或 <b>「收藏到桌面」</b>。</div></div>
+    <div class="step"><div class="num">4</div><div class="body">回到桌面，即可看到 <b>📚 考研管家</b> 图标，点击全屏打开。</div></div>
+    <div class="note">HarmonyOS 4.0+ 已支持 PWA / Web App Manifest，会自动获得类原生体验。</div>
+  </div>
+
+  <div class="card">
+    <h2>方式二：开发者快应用打包（进阶，可上架华为应用市场）</h2>
+    <p style="font-size:13.5px;margin-bottom:8px">如需分发为独立的 <code>.rpk</code> 鸿蒙原生安装包，可用 <b>HBuilderX</b> 将本 Web App 打包为快应用 / 鸿蒙元服务。</p>
+    <p style="font-size:13.5px;margin-bottom:8px">1. 下载 HBuilderX（https://www.dcloud.io/hbuilderx.html）<br>2. 新建 <code>5+App</code> 项目，将 <code>app/</code> 目录放入 <code>unpackage/dist/dev/</code><br>3. 菜单 <code>发行 → 原生 App-云打包</code>，选 <b>HarmonyOS</b> 通道，提交云端打包<br>4. 约 10-20 分钟生成 <code>.hap</code> / <code>.app</code> 安装包</p>
+    <div class="warn">云打包需要 DCloud 账号实名；本项目零依赖、纯前端，可直接打包成功。</div>
+  </div>
+
+  <div class="card">
+    <h2>使用说明</h2>
+    <p style="font-size:14px">首次打开需联网一次（加载字体 + 缓存资源），之后<strong>完全离线可用</strong>。所有数据本地存储，关闭重启不丢。</p>
+  </div>
+
+  <div class="center">
+    <a class="btn" href="../app/index.html" target="_blank">🚀 立即打开考研管家</a>
+    <div class="note">首次打开后请回到本页面，按上面步骤完成「添加到桌面」。</div>
+  </div>
+</div>
+</body>
+</html>
